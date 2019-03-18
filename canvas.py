@@ -1,6 +1,5 @@
 import ray
 import numpy as np
-from scene.py import *
 
 
 CANVAS_HEIGHT = 100.0
@@ -30,8 +29,8 @@ class Canvas:
                 r = ray.Ray(np.array([0, 0, 0]), np.array([x, y, z]))
                 for o in scene.hittable:
                     color = o.intersect(r)
-                    if not color:
+                    if color:
                         f.write(color)
                     else:
-                        f.write("255   0   0 ")
+                        f.write("0   0   0  ")
             f.write("\n")
