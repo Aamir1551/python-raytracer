@@ -45,7 +45,7 @@ def drawcanvas(cscene, filename):
     f.write("255 \n")
     for i in range(0, CANVAS_HEIGHT):
         for j in range(0, CANVAS_WIDTH):
-            [x, y, z] = getViewPointXYZ(i, j)
+            [x, y, z] = getViewPointXYZ(j, i)
             r = ray(np.array([0,0,0]),np.array([x, y, z]))
             for o in cscene.hittable:
                 color = o.intersect(r)
@@ -57,7 +57,7 @@ def drawcanvas(cscene, filename):
 
 
 
-cscene  = scene([Sphere(np.array([0,0,100]), 14, "255 255   0 ")])
+cscene  = scene([Sphere(np.array([0,0,100]), 7, "255 255   0 ")])
 drawcanvas(cscene, "pic.ppm")
 
 
