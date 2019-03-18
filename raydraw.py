@@ -17,10 +17,6 @@ class Sphere:
         b = 2 * np.dot(self.c , rayin.d)
         c = np.dot(self.c * -1, self.c * -1) - self.r * self.r
 
-        print(a)
-        print(b)
-        print(c)
-
         dis = b*b - 4 * a * c
         if(dis >= 0):
             return self.color
@@ -32,12 +28,12 @@ class scene():
         self.hittable = hittable
 
 
-CANVAS_HEIGHT = 40.0
-CANVAS_WIDTH = 50.0
+CANVAS_HEIGHT = 100.0
+CANVAS_WIDTH = 200.0
 
-VIEWPOINT_HEIGHT = 100.0
-VIEWPOINT_WIDTH = 200.0
-VIEWPOINT_DIST = 5.0
+VIEWPOINT_HEIGHT = 1.0
+VIEWPOINT_WIDTH = 1.0
+VIEWPOINT_DIST = 1.1
 
 def getViewPointXYZ(canvasx, canvasy):
     return [ canvasx/ CANVAS_WIDTH * VIEWPOINT_WIDTH - VIEWPOINT_WIDTH /2,float(canvasy / CANVAS_HEIGHT * VIEWPOINT_HEIGHT * - VIEWPOINT_HEIGHT / 2), VIEWPOINT_DIST]
@@ -61,7 +57,7 @@ def drawcanvas(cscene, filename):
 
 
 
-cscene  = scene([Sphere(np.array([0,0,30]), 15, "255 255   0 ")])
+cscene  = scene([Sphere(np.array([0,-1, 3]), 0.9, "255 255   0 ")])
 drawcanvas(cscene, "pic.ppm")
 
 
