@@ -14,8 +14,8 @@ class Sphere:
 
     def intersect(self, rayin):
         a = np.dot(rayin.d, rayin.d)
-        b = 2 * np.dot(self.c, rayin.d)
-        c = np.dot(self.c, self.c) - self.r * self.r
+        b = 2 * np.dot(self.c * -1, rayin.d)
+        c = np.dot(self.c * -1, self.c * -1) - self.r * self.r
 
         dis = b*b - 4 * a * c
         if(dis >= 0):
