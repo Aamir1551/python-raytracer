@@ -14,8 +14,12 @@ class Sphere:
 
     def intersect(self, rayin):
         a = np.dot(rayin.d, rayin.d)
-        b = 2 * np.dot(self.c * -1, rayin.d)
+        b = 2 * np.dot(self.c , rayin.d)
         c = np.dot(self.c * -1, self.c * -1) - self.r * self.r
+
+        print(a)
+        print(b)
+        print(c)
 
         dis = b*b - 4 * a * c
         if(dis >= 0):
@@ -57,7 +61,7 @@ def drawcanvas(cscene, filename):
 
 
 
-cscene  = scene([Sphere(np.array([0,0,100]), 7, "255 255   0 ")])
+cscene  = scene([Sphere(np.array([0,0,30]), 15, "255 255   0 ")])
 drawcanvas(cscene, "pic.ppm")
 
 
