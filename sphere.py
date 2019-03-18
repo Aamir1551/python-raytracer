@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class Sphere:
 
     def __init__(self, c, r, color):
@@ -15,3 +18,5 @@ class Sphere:
             return self.color
         else:
             return False
+
+
