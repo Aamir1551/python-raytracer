@@ -27,10 +27,5 @@ class Canvas:
             for j in range(0, int(CANVAS_WIDTH)):
                 [x, y, z] = Canvas.get_view_point(j, i)
                 r = ray.Ray(np.array([0, 0, 0]), np.array([x, y, z]))
-                for o in scene.hittable:
-                    color = o.intersect(r)
-                    if color:
-                        f.write(color)
-                    else:
-                        f.write("0   0   0  ")
+                f.write(scene.trace_ray(r, 0.01))
             f.write("\n")

@@ -9,14 +9,18 @@ class Sphere:
         self.color = color
 
     def intersect(self, rayin):
-        a = np.dot(rayin.d, rayin.d)
-        b = 2 * np.dot(self.c , rayin.d)
-        c = np.dot(self.c * -1, self.c * -1) - self.r * self.r
 
-        dis = b*b - 4 * a * c
-        if dis >= 0:
-            return self.color
+        oc = rayin.p - self.c
+
+        a = np.dot(rayin.d, rayin.d)
+        b = 2 * np.dot(oc, rayin.d)
+        c = np.dot(oc, oc) - self.r * self.r
+
+        dis = (b*b - 4 * a * c)
+
+        if dis < 0:
+            return float("inf"), float("inf")
         else:
-            return False
+            return [(-b + np.sqrt(dis)) / (2*a), (-b - np.sqrt(dis))/(2*a)]
 
 
