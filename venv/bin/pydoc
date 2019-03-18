@@ -1,0 +1,5 @@
+#!/home/csunix/ll17a26s/psnl/raytracer/venv/bin/python3.3
+if __name__ == '__main__':
+    import sys, pydoc
+    sys.exit(pydoc.cli())
+
