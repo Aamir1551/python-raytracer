@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0da70adf-1cf9-4301-bbfb-5d66c4a3b2ce" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pic.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/pic.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raydraw.py" beforeDir="false" afterPath="$PROJECT_DIR$/raydraw.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="raydraw.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/raydraw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+            <state relative-caret-position="255">
+              <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -109,7 +110,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1018" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -184,8 +184,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raydraw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        <state relative-caret-position="255">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
         </state>
       </provider>
     </entry>
