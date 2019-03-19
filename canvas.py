@@ -32,4 +32,5 @@ class Canvas:
 
     @staticmethod
     def col_string(color):
-        return "{:03d}".format(int(color[0])) + " " "{:03d}".format(int(color[1])) + " " + "{:03d} ".format(int(color[2]))
+        return "{:03d}".format(int(color[0])) + " " + "{:03d}".format(int(color[1])) + " " \
+               + "{:03d} ".format(int(color[2]))
