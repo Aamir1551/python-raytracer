@@ -24,9 +24,9 @@ class Scene:
 
         point = ray.p + ray.d * closest_t
         normal = closest_shape.normal(point)
-        return np.array(closest_shape.color) * self.compute_intensity(point, normal)
+        return np.array(closest_shape.color) * self.compute_intensity(point, normal, closest_shape.specular, -ray.d)
 
-    def compute_intensity(self, point, normal):
+    def compute_intensity(self, point, normal, specular, viewpoint):
         i = 0
         for light in self.lights:
             if light.type == "ambient":
@@ -38,5 +38,12 @@ class Scene:
                     direction = light.props
                 n_dot_l = np.dot(normal, direction)
                 i += max(0, n_dot_l / np.sqrt(direction.dot(direction))) #did not divide by magnitude of n as its 1
+                
+                
+                if(specular != -1):
+                    r = 2 * normal * np.dot(normal, direction) - direction
+                    r_dot_v = np.dot(r, viewpoint)
+                    if(r_dot_v > 0):
+                        i+= light.intensity * pow(r_dot_v/(np.dot(r, r) * np.dot(viewpoint, viewpoint) ** 0.5), specular)
         return min(i,1)
 

@@ -3,10 +3,11 @@ import numpy as np
 
 class Sphere:
 
-    def __init__(self, c, r, color):
+    def __init__(self, c, r, color, specular):
         self.c = c
         self.r = r
         self.color = color
+        self.specular = specular
 
     def intersect(self, rayin):
 
