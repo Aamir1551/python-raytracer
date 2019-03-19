@@ -25,7 +25,7 @@ class Sphere:
 
     def normal(self, point):
         normal = point - self.c
-        return normal / np.dot(normal, normal) ** 2
+        return normal / np.dot(normal, normal) ** 0.5
 
 
 

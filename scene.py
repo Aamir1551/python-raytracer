@@ -16,13 +16,13 @@ class Scene:
             if t_min < t1 < closest_t:
                 closest_t = t1
                 closest_shape = shape
-            if t_min < t2 < t1 < closest_t:
+            if t_min < t2 < closest_t:
                 closest_t = t2
                 closest_shape = shape
         if closest_shape is None:
             return self.background_color
 
-        point = ray.p
+        point = ray.p + ray.d * closest_t
         normal = closest_shape.normal(point)
         return np.array(closest_shape.color) * self.compute_intensity(point, normal)
 
@@ -38,5 +38,5 @@ class Scene:
                     direction = light.props
                 n_dot_l = np.dot(normal, direction)
                 i += max(0, n_dot_l / np.sqrt(direction.dot(direction))) #did not divide by magnitude of n as its 1
-        return i
+        return min(i,1) # fixed now, this was adding up to more than 1 which was producing colors > 255, ow kay, bt basim, why is my images so messed up compared to
 
