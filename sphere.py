@@ -3,11 +3,12 @@ import numpy as np
 
 class Sphere:
 
-    def __init__(self, c, r, color, specular):
+    def __init__(self, c, r, color, specular, reflectiveness):
         self.c = c
         self.r = r
         self.color = color
         self.specular = specular
+        self.reflectiveness = reflectiveness
 
     def intersect(self, rayin):
 
@@ -22,7 +23,7 @@ class Sphere:
         if dis < 0:
             return float("inf"), float("inf")
         else:
-            return [(-b + np.sqrt(dis)) / (2*a), (-b - np.sqrt(dis))/(2*a)]
+            return [( -1 * b + np.sqrt(dis)) / (2*a), ( -1 *b - np.sqrt(dis))/(2*a)]
 
     def normal(self, point):
         normal = point - self.c
