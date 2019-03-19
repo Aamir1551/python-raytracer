@@ -38,5 +38,5 @@ class Scene:
                     direction = light.props
                 n_dot_l = np.dot(normal, direction)
                 i += max(0, n_dot_l / np.sqrt(direction.dot(direction))) #did not divide by magnitude of n as its 1
-        return min(i,1) # fixed now, this was adding up to more than 1 which was producing colors > 255, ow kay, bt basim, why is my images so messed up compared to
+        return min(i,1)
 
