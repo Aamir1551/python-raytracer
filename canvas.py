@@ -2,20 +2,20 @@ import ray
 import numpy as np
 
 
-CANVAS_HEIGHT = 500.0
-CANVAS_WIDTH = 500.0
+CANVAS_HEIGHT = 500
+CANVAS_WIDTH = 500
 
 VIEWPOINT_HEIGHT = 1.0
 VIEWPOINT_WIDTH = 1.0
-VIEWPOINT_DIST = 0.5
+VIEWPOINT_DIST = 1.0
 
 
 class Canvas:
 
     @staticmethod
     def get_view_point(canvasx, canvasy):
-        return [canvasx/CANVAS_WIDTH * VIEWPOINT_WIDTH - VIEWPOINT_WIDTH / 2,
-                float(canvasy / CANVAS_HEIGHT * VIEWPOINT_HEIGHT * - VIEWPOINT_HEIGHT / 2), VIEWPOINT_DIST]
+        return [canvasx/CANVAS_WIDTH * VIEWPOINT_WIDTH,
+                canvasy / CANVAS_HEIGHT * VIEWPOINT_HEIGHT, VIEWPOINT_DIST]
 
     @staticmethod
     def draw_canvas(scene, filename):
