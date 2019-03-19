@@ -2,6 +2,7 @@ from sphere import *
 from scene import *
 from canvas import *
 from light import *
+from PIL import Image
 
 BACKGROUND_COLOUR = [0, 0, 0]
 
@@ -18,3 +19,4 @@ lights = [Light("ambient", 0.2, -1), Light("point", 0.8, np.array([2, 1, 6])),
 cscene = Scene(hittables, lights, BACKGROUND_COLOUR)
 
 Canvas.draw_canvas(cscene, "pic.ppm")
+
