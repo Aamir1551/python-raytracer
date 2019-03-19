@@ -14,13 +14,18 @@ class Sphere:
 
         a = np.dot(rayin.d, rayin.d)
         b = 2 * np.dot(oc, rayin.d)
-        c = np.dot(oc, oc) - self.r * self.r
+        c = np.dot(oc, oc) - self.r ** 2
 
-        dis = (b*b - 4 * a * c)
+        dis = (b**2 - 4 * a * c)
 
         if dis < 0:
             return float("inf"), float("inf")
         else:
             return [(-b + np.sqrt(dis)) / (2*a), (-b - np.sqrt(dis))/(2*a)]
+
+    def normal(self, point):
+        normal = point - self.c
+        return normal / np.dot(normal, normal) ** 2
+
 
 

@@ -27,5 +27,9 @@ class Canvas:
             for j in range(0, int(CANVAS_WIDTH)):
                 [x, y, z] = Canvas.get_view_point(j, i)
                 r = ray.Ray(np.array([0, 0, 0]), np.array([x, y, z]))
-                f.write(scene.trace_ray(r, 0.01))
+                f.write(Canvas.col_string(scene.trace_ray(r, 0.01)))
             f.write("\n")
+
+    @staticmethod
+    def col_string(color):
+        return "{:03d}".format(int(color[0])) + " " "{:03d}".format(int(color[1])) + " " + "{:03d} ".format(int(color[2]))
